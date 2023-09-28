@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>School Service</title>
+</head>
+<body>
+<h1>Subject List</h1>
+<form method="post" action="/subject-list/create-subject">
+    <label for="subjectName">Название предмета:</label>
+    <input type="text" id="subjectName" name="subjectName" required>
+    <br><br>
+    <input type="submit" value="Создать предмет">
+</form>
+<br><br>
+<h1>Список школьных предметов</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Название предмета</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="subject : ${subjects}">
+        <td th:text="${subject.name}"></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<a href="/">Back</a>
+</body>
+</html>

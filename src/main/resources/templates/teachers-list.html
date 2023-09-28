@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>School Service</title>
+</head>
+<body>
+<h1>Teacher List</h1>
+<form method="post" action="/teachers-list/create-teacher">
+    <label for="teacherName">Введите полное имя учителя:</label>
+    <input type="text" id="teacherName" name="teacherName" required>
+    <br><br>
+    <input type="submit" value="Добавить учителя">
+</form>
+<br><br>
+<h1>Список учителей</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Полное имя учителя</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="teacher : ${teachers}">
+        <td th:text="${teacher.fullName}"></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/">Back</a>
+</body>
+</html>
